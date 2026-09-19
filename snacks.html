@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks & Beverages - Open Challenge Supermarket Akola</title>
+    <meta name="description" content="Shop Biscuits, Tea, Coffee, Instant Noodles, Chocolates & Fruit Juices at lowest prices at Open Challenge Supermarket in Akola.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-category-page="Snacks & Beverages">
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container flex-between">
+            <div class="announcement-text">
+                <span class="pulse-led"></span>
+                <span><strong>Snacks & Drinks Festival</strong> | Digital Catalog & Lowest Prices Guaranteed! <span class="digital-badge-pill">🟢 4 STORES OPEN</span></span>
+            </div>
+            <div class="announcement-links">
+                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Akola Store Locations</a>
+                <span class="divider">|</span>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <span class="divider">|</span>
+                <a href="contact.html"><i class="fa-solid fa-headset"></i> Customer Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo-container">
+                <div class="logo-badge">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub"><i class="fa-solid fa-microchip"></i> DIGITAL HYPERMARKET • AKOLA</span>
+                </div>
+            </a>
+
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="main-search-input" placeholder="Search Biscuits, Tea, Coffee, Maggi, Chocolates..." autocomplete="off">
+                    <button class="search-btn" id="search-submit-btn" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="search-dropdown hidden" id="search-dropdown-results"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="stores.html" class="action-btn" title="Find Store Locations">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span class="action-text">Akola Stores</span>
+                </a>
+
+                <button class="action-btn" onclick="openWishlistDrawer()" title="Saved Favorites">
+                    <div class="icon-with-badge">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="badge" id="wishlist-count-badge">0</span>
+                    </div>
+                    <span class="action-text">Saved Items</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Category Bar -->
+    <nav class="category-nav">
+        <div class="container nav-wrapper">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="grocery.html" class="nav-link"><i class="fa-solid fa-wheat-awn"></i> Grocery & Staples</a></li>
+                <li><a href="snacks.html" class="nav-link active"><i class="fa-solid fa-cookie-bite"></i> Snacks & Drinks</a></li>
+                <li><a href="household.html" class="nav-link"><i class="fa-solid fa-soap"></i> Household Care</a></li>
+                <li><a href="personal-care.html" class="nav-link"><i class="fa-solid fa-pump-soap"></i> Personal Care</a></li>
+                <li><a href="dairy.html" class="nav-link"><i class="fa-solid fa-cheese"></i> Dairy & Frozen</a></li>
+                <li><a href="stores.html" class="nav-link"><i class="fa-solid fa-store"></i> Akola Stores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero-section" style="background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-sub-tag"><i class="fa-solid fa-cookie-bite"></i> SNACKS & REFRESHMENTS</span>
+                <h1>Snacks & Beverages</h1>
+                <p>Everyday low prices on Parle-G, Maggi Noodles, Tata Tea, Cadbury Chocolates & Tropicana Juices in Akola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <main class="main-content container page-body">
+        <section class="catalog-section" style="grid-template-columns: 260px 1fr;" id="catalog">
+            
+            <aside class="sidebar-filters">
+                <div class="sidebar-header">
+                    <h3><i class="fa-solid fa-filter"></i> Filter Snacks</h3>
+                    <button class="reset-filter-btn" id="reset-filters-btn"><i class="fa-solid fa-rotate"></i> Clear All</button>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Discount (% OFF)</h4>
+                    <div class="filter-options">
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="0" checked> All Products
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="10"> 10% & Above
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="25"> 25% & Above
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Max Price</h4>
+                    <div class="price-slider-box">
+                        <input type="range" id="price-range-slider" min="50" max="2500" step="50" value="2500">
+                        <div class="price-range-labels">
+                            <span>₹50</span>
+                            <span id="price-range-value">Up to ₹2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="catalog-main">
+                <div class="catalog-toolbar">
+                    <div class="toolbar-left">
+                        <h2>Snacks, Biscuits & Beverages</h2>
+                        <span class="product-count" id="product-count-label">Showing products</span>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="sort-box">
+                            <label for="sort-select">Sort By:</label>
+                            <select id="sort-select" class="sort-dropdown">
+                                <option value="relevance">Popularity / Relevance</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="discount-high">Highest Discount</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="products-grid"></div>
+
+                <div class="empty-products-state hidden" id="empty-state">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>No snack products found matching your search</h3>
+                    <button class="btn btn-primary" onclick="resetAllFilters()">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-top">
+            <div class="footer-col brand-col">
+                <div class="logo-badge white">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub">AKOLA SUPERMARKET</span>
+                </div>
+                <p>Open Challenge Supermarket is Akola's premier retail hypermarket chain. High quality products at lowest prices guaranteed everyday.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="grocery.html">Grocery & Staples</a></li>
+                    <li><a href="snacks.html">Snacks & Beverages</a></li>
+                    <li><a href="household.html">Household Care</a></li>
+                    <li><a href="personal-care.html">Personal Care</a></li>
+                    <li><a href="dairy.html">Dairy & Frozen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Akola Stores</h4>
+                <ul>
+                    <li><a href="stores.html">Murtizapur Road Branch</a></li>
+                    <li><a href="stores.html">Civil Lines Branch</a></li>
+                    <li><a href="stores.html">Jowahar Nagar Branch</a></li>
+                    <li><a href="stores.html">Old City Market Branch</a></li>
+                </ul>
+            </div>
+            <div class="footer-col app-col">
+                <h4>Akola Support</h4>
+                <p><i class="fa-solid fa-phone"></i> <strong>0724-2430001</strong> (8 AM - 8 PM)</p>
+                <p><i class="fa-solid fa-envelope"></i> support@openchallenge.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container flex-between">
+                <p>&copy; 2026 Open Challenge Supermarket (Akola, Maharashtra). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="product-detail-modal">
+        <div class="modal-card product-detail-card">
+            <button class="close-modal-btn" onclick="closeProductDetailModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body product-detail-layout" id="product-detail-body"></div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

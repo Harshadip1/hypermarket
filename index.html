@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Challenge - Online Grocery Catalog & Supermarket Store Akola</title>
+    <meta name="description" content="Explore Open Challenge supermarket products catalog for lowest prices on Grocery, Staples, Packaged Food, Personal Care & Household Essentials in Akola.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container flex-between">
+            <div class="announcement-text">
+                <span class="pulse-led"></span>
+                <span><strong>Open Challenge Supermarket Akola</strong> | Digital Catalog & Daily Lowest Prices Guaranteed! <span class="digital-badge-pill">🟢 4 STORES OPEN</span></span>
+            </div>
+            <div class="announcement-links">
+                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Akola Store Locations</a>
+                <span class="divider">|</span>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <span class="divider">|</span>
+                <a href="contact.html"><i class="fa-solid fa-headset"></i> Customer Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-container">
+                <div class="logo-badge">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub"><i class="fa-solid fa-microchip"></i> DIGITAL HYPERMARKET • AKOLA</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <select id="search-category-select" class="search-cat-dropdown">
+                        <option value="all">All Categories</option>
+                        <option value="Grocery & Staples">Grocery & Staples</option>
+                        <option value="Snacks & Beverages">Snacks & Drinks</option>
+                        <option value="Household Essentials">Household Essentials</option>
+                        <option value="Personal Care">Personal Care</option>
+                        <option value="Dairy & Frozen">Dairy & Frozen</option>
+                    </select>
+                    <input type="text" id="main-search-input" placeholder="Search for Atta, Rice, Oil, Biscuits, Soap..." autocomplete="off">
+                    <button class="search-btn" id="search-submit-btn" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="search-dropdown hidden" id="search-dropdown-results"></div>
+            </div>
+
+            <!-- Header Quick Action Navigation -->
+            <div class="header-actions">
+                <a href="stores.html" class="action-btn" title="Find Store Locations">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span class="action-text">Akola Stores</span>
+                </a>
+
+                <button class="action-btn" onclick="openWishlistDrawer()" title="Saved Favorites">
+                    <div class="icon-with-badge">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="badge" id="wishlist-count-badge">0</span>
+                    </div>
+                    <span class="action-text">Saved Items</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mega Navigation Category Bar -->
+    <nav class="category-nav">
+        <div class="container nav-wrapper">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="grocery.html" class="nav-link"><i class="fa-solid fa-wheat-awn"></i> Grocery & Staples</a></li>
+                <li><a href="snacks.html" class="nav-link"><i class="fa-solid fa-cookie-bite"></i> Snacks & Drinks</a></li>
+                <li><a href="household.html" class="nav-link"><i class="fa-solid fa-soap"></i> Household Care</a></li>
+                <li><a href="personal-care.html" class="nav-link"><i class="fa-solid fa-pump-soap"></i> Personal Care</a></li>
+                <li><a href="dairy.html" class="nav-link"><i class="fa-solid fa-cheese"></i> Dairy & Frozen</a></li>
+                <li><a href="stores.html" class="nav-link"><i class="fa-solid fa-store"></i> Akola Stores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container Layout -->
+    <main class="main-content">
+        
+        <!-- Hero Banner Carousel with Rich Images -->
+        <section class="hero-section container">
+            <div class="carousel-container" id="hero-carousel">
+                <div class="carousel-slides">
+                    <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&auto=format&fit=crop&q=80');">
+                        <div class="slide-content">
+                            <span class="slide-tag"><i class="fa-solid fa-tags"></i> MONTHLY GROCERY SAVINGS</span>
+                            <h2>Super Savings On Atta, Rice & Cooking Oils!</h2>
+                            <p>Explore price list for daily kitchen essentials. Open Challenge Lowest Price Guaranteed in all Akola stores.</p>
+                            <a href="grocery.html" class="slide-btn">View Grocery Page <i class="fa-solid fa-arrow-right"></i></a>
+
+                            <!-- Digital Flash Sale Countdown Timer -->
+                            <div class="digital-timer-widget">
+                                <div class="timer-label"><i class="fa-solid fa-bolt"></i> TODAY'S DIGITAL FLASH SALE ENDS IN:</div>
+                                <div class="timer-digits">
+                                    <div class="t-unit"><strong id="digital-h">04</strong><small>HRS</small></div>
+                                    <span class="t-colon">:</span>
+                                    <div class="t-unit"><strong id="digital-m">32</strong><small>MINS</small></div>
+                                    <span class="t-colon">:</span>
+                                    <div class="t-unit"><strong id="digital-s">15</strong><small>SECS</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-badge-circle">
+                            <span>UP TO</span>
+                            <strong>50%</strong>
+                            <span>OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=1200&auto=format&fit=crop&q=80');">
+                        <div class="slide-content">
+                            <span class="slide-tag"><i class="fa-solid fa-sparkles"></i> HOME & LAUNDRY SPECIAL</span>
+                            <h2>Detergents, Cleaners & Dishwash Mega Sale</h2>
+                            <p>Check prices on Surf Excel, Vim, Harpic & Ariel available at flat wholesale rates in Akola.</p>
+                            <a href="household.html" class="slide-btn">Explore Household Page <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="slide-badge-circle red">
+                            <span>BUY 1</span>
+                            <strong>GET 1</strong>
+                            <span>FREE</span>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1200&auto=format&fit=crop&q=80');">
+                        <div class="slide-content">
+                            <span class="slide-tag"><i class="fa-solid fa-cookie"></i> SNACK TIME DELIGHTS</span>
+                            <h2>Biscuits, Chocolates & Beverages Festival</h2>
+                            <p>Everyday low prices on Parle, Cadbury, Nescafe & Tropicana juices at nearest Open Challenge store.</p>
+                            <a href="snacks.html" class="slide-btn">View Snacks Page <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="slide-badge-circle gold">
+                            <span>MIN</span>
+                            <strong>33%</strong>
+                            <span>OFF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-nav prev" id="carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-nav next" id="carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+
+                <div class="carousel-indicators" id="carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Category Icon Cards with Product Images -->
+        <section class="category-shortcuts container">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-grid-2"></i> Shop By Product Category Pages</h3>
+            </div>
+
+            <div class="category-grid">
+                <a href="grocery.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&auto=format&fit=crop&q=80" alt="Rice & Atta">
+                    </div>
+                    <span>Rice & Atta</span>
+                </a>
+                <a href="grocery.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=300&auto=format&fit=crop&q=80" alt="Edible Oils">
+                    </div>
+                    <span>Edible Oils</span>
+                </a>
+                <a href="snacks.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=300&auto=format&fit=crop&q=80" alt="Tea & Coffee">
+                    </div>
+                    <span>Tea & Coffee</span>
+                </a>
+                <a href="snacks.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&auto=format&fit=crop&q=80" alt="Biscuits & Munchies">
+                    </div>
+                    <span>Biscuits & Munchies</span>
+                </a>
+                <a href="household.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&auto=format&fit=crop&q=80" alt="Cleaners">
+                    </div>
+                    <span>Detergents & Cleaners</span>
+                </a>
+                <a href="personal-care.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1607006482602-76ca0fd2f864?w=300&auto=format&fit=crop&q=80" alt="Bath & Body">
+                    </div>
+                    <span>Bath & Personal Care</span>
+                </a>
+                <a href="dairy.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&auto=format&fit=crop&q=80" alt="Dairy & Cheese">
+                    </div>
+                    <span>Dairy & Frozen</span>
+                </a>
+                <a href="stores.html" class="cat-card">
+                    <div class="cat-thumb-box">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=300&auto=format&fit=crop&q=80" alt="Akola Stores">
+                    </div>
+                    <span>Akola Store Finder</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Open Challenge Promises Ribbon -->
+        <section class="promises-ribbon container">
+            <div class="promise-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h4>Open Challenge Price Guarantee</h4>
+                    <p>Lower than MRP, every single day</p>
+                </div>
+            </div>
+            <div class="promise-item">
+                <i class="fa-solid fa-store"></i>
+                <div>
+                    <h4>4 Akola Store Branches</h4>
+                    <p>Murtizapur Rd, Civil Lines, Jowahar Nagar & Old City</p>
+                </div>
+            </div>
+            <div class="promise-item">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <div>
+                    <h4>100% Genuine Products</h4>
+                    <p>Directly sourced from top brands</p>
+                </div>
+            </div>
+            <div class="promise-item">
+                <i class="fa-solid fa-rotate-left"></i>
+                <div>
+                    <h4>Easy In-Store Returns</h4>
+                    <p>Hassle-free return policy at customer desk</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section (Sidebar + Grid) -->
+        <section class="catalog-section container" id="catalog">
+            
+            <aside class="sidebar-filters" id="sidebar-filters">
+                <div class="sidebar-header">
+                    <h3><i class="fa-solid fa-filter"></i> Filter Products</h3>
+                    <button class="reset-filter-btn" id="reset-filters-btn"><i class="fa-solid fa-rotate"></i> Clear All</button>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Categories</h4>
+                    <div class="filter-options" id="category-checkboxes">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Grocery & Staples" checked> Grocery & Staples
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Snacks & Beverages" checked> Snacks & Beverages
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Household Essentials" checked> Household Care
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Personal Care" checked> Personal Care
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Dairy & Frozen" checked> Dairy & Frozen
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Discount (% OFF)</h4>
+                    <div class="filter-options">
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="0" checked> All Products
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="10"> 10% & Above
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="discount-filter" value="25"> 25% & Above
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Max Price</h4>
+                    <div class="price-slider-box">
+                        <input type="range" id="price-range-slider" min="50" max="2500" step="50" value="2500">
+                        <div class="price-range-labels">
+                            <span>₹50</span>
+                            <span id="price-range-value">Up to ₹2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="catalog-main">
+                <div class="catalog-toolbar">
+                    <div class="toolbar-left">
+                        <h2 id="catalog-title">All Supermarket Products</h2>
+                        <span class="product-count" id="product-count-label">Showing 0 products</span>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="sort-box">
+                            <label for="sort-select">Sort By:</label>
+                            <select id="sort-select" class="sort-dropdown">
+                                <option value="relevance">Popularity / Relevance</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="discount-high">Highest Discount</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Quick Filter Chips -->
+                <div class="digital-quick-filters" id="digital-quick-filters">
+                    <button class="digital-chip active" data-chip="all"><i class="fa-solid fa-border-all"></i> All Items (62)</button>
+                    <button class="digital-chip" data-chip="flash"><i class="fa-solid fa-bolt"></i> Flash Deals (>25% OFF)</button>
+                    <button class="digital-chip" data-chip="top"><i class="fa-solid fa-star"></i> Top Rated (4.8+ ★)</button>
+                    <button class="digital-chip" data-chip="saver"><i class="fa-solid fa-box-archive"></i> Super Saver Packs</button>
+                </div>
+
+                <div class="products-grid" id="products-grid"></div>
+
+                <div class="empty-products-state hidden" id="empty-state">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>No products found matching your search</h3>
+                    <button class="btn btn-primary" onclick="resetAllFilters()">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Akola Customer Reviews & Digital Testimonials -->
+        <section class="testimonials-section container" style="margin-bottom: 40px;">
+            <div class="section-header" style="margin-bottom: 24px; text-align: center; display: block;">
+                <span class="hero-sub-tag"><i class="fa-solid fa-heart"></i> VERIFIED AKOLA REVIEWS</span>
+                <h2 style="font-size: 1.6rem; color: var(--text-primary);">What Akola Shoppers Say About Open Challenge</h2>
+            </div>
+            
+            <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div class="review-card" style="padding: 20px; border-radius: var(--radius-md); background: rgba(255,255,255,0.8); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div class="stars" style="color: #FFC107; margin-bottom: 10px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-primary); font-style: italic; margin-bottom: 14px; line-height: 1.5;">"The lowest prices on Fortune Oil & Aashirvaad Atta in all of Akola! Murtizapur Road branch is super spacious with fast express billing."</p>
+                    <div class="reviewer" style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--dmart-green); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700;">R</div>
+                        <div>
+                            <strong style="display: block; font-size: 0.85rem; color: var(--text-primary);">Rajesh Deshmukh</strong>
+                            <small style="color: var(--text-secondary); font-size: 0.75rem;">Murtizapur Road, Akola</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card" style="padding: 20px; border-radius: var(--radius-md); background: rgba(255,255,255,0.8); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div class="stars" style="color: #FFC107; margin-bottom: 10px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-primary); font-style: italic; margin-bottom: 14px; line-height: 1.5;">"Civil Lines branch is my favorite weekend shopping spot. Great discounts on Dove soaps, detergents, and snacks!"</p>
+                    <div class="reviewer" style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--dmart-red); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700;">P</div>
+                        <div>
+                            <strong style="display: block; font-size: 0.85rem; color: var(--text-primary);">Priya Kulkarni</strong>
+                            <small style="color: var(--text-secondary); font-size: 0.75rem;">Civil Lines, Akola</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card" style="padding: 20px; border-radius: var(--radius-md); background: rgba(255,255,255,0.8); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div class="stars" style="color: #FFC107; margin-bottom: 10px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-primary); font-style: italic; margin-bottom: 14px; line-height: 1.5;">"Digital price catalog is very handy! I check prices before visiting Jowahar Nagar store. Genuine savings every month."</p>
+                    <div class="reviewer" style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--dmart-orange); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700;">A</div>
+                        <div>
+                            <strong style="display: block; font-size: 0.85rem; color: var(--text-primary);">Aniket Joshi</strong>
+                            <small style="color: var(--text-secondary); font-size: 0.75rem;">Jowahar Nagar, Akola</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-top">
+            <div class="footer-col brand-col">
+                <div class="logo-badge white">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub">AKOLA SUPERMARKET</span>
+                </div>
+                <p>Open Challenge Supermarket is Akola's premier retail hypermarket chain. High quality products at lowest prices guaranteed everyday.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product Category Pages</h4>
+                <ul>
+                    <li><a href="grocery.html">Grocery & Staples</a></li>
+                    <li><a href="snacks.html">Snacks & Beverages</a></li>
+                    <li><a href="household.html">Household Care</a></li>
+                    <li><a href="personal-care.html">Personal Care</a></li>
+                    <li><a href="dairy.html">Dairy & Frozen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us / Feedback</a></li>
+                    <li><a href="contact.html#faq">Frequently Asked Questions</a></li>
+                    <li><a href="stores.html">Store Operating Hours</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col app-col">
+                <h4>Akola Helpline</h4>
+                <p><i class="fa-solid fa-phone"></i> <strong>0724-2430001</strong> (8 AM - 8 PM)</p>
+                <p><i class="fa-solid fa-envelope"></i> support@openchallenge.in</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container flex-between">
+                <p>&copy; 2026 Open Challenge Supermarket (Akola, Maharashtra). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="product-detail-modal">
+        <div class="modal-card product-detail-card">
+            <button class="close-modal-btn" onclick="closeProductDetailModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body product-detail-layout" id="product-detail-body"></div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

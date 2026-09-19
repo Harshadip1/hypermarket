@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Challenge Store Locations in Akola, Maharashtra - Timings & Directions</title>
+    <meta name="description" content="Find Open Challenge store locations in Akola, Maharashtra (Murtizapur Road, Civil Lines, Jowahar Nagar, Old City). Check store addresses, opening timings, and directions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container flex-between">
+            <div class="announcement-text">
+                <span class="pulse-led"></span>
+                <span><strong>Open Challenge Supermarket Akola</strong> | Digital Catalog & Lowest Prices Guaranteed! <span class="digital-badge-pill">🟢 4 STORES OPEN</span></span>
+            </div>
+            <div class="announcement-links">
+                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Akola Store Locations</a>
+                <span class="divider">|</span>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <span class="divider">|</span>
+                <a href="contact.html"><i class="fa-solid fa-headset"></i> Customer Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-container">
+                <div class="logo-badge">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub"><i class="fa-solid fa-microchip"></i> DIGITAL HYPERMARKET • AKOLA</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="store-search-input" placeholder="Search Akola store by locality or area (e.g. Murtizapur Road, Civil Lines)...">
+                    <button class="search-btn" id="store-search-btn" aria-label="Search Store">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Header Quick Actions -->
+            <div class="header-actions">
+                <a href="stores.html" class="action-btn" title="Find Store Locations">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span class="action-text">Akola Stores</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mega Navigation Category Bar -->
+    <nav class="category-nav">
+        <div class="container nav-wrapper">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="index.html#catalog" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Products</a></li>
+                <li><a href="stores.html" class="nav-link active"><i class="fa-solid fa-store"></i> Stores in Akola</a></li>
+                <li><a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                <li><a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Stores Hero Banner -->
+    <section class="page-hero-section">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-sub-tag"><i class="fa-solid fa-location-dot"></i> AKOLA, MAHARASHTRA STORES</span>
+                <h1>Open Challenge Store Locations in Akola</h1>
+                <p>Find your nearest Open Challenge Supermarket branch in Akola for everyday lowest prices on grocery & household goods.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores Search & Filter Bar -->
+    <main class="main-content container page-body">
+        
+        <div class="store-filter-bar">
+            <div class="city-chips-container">
+                <span class="filter-label"><i class="fa-solid fa-city"></i> Filter Area in Akola:</span>
+                <div class="city-chips">
+                    <button class="city-chip active" onclick="filterStores('all')">All Akola Stores</button>
+                    <button class="city-chip" onclick="filterStores('Murtizapur Road')">Murtizapur Road</button>
+                    <button class="city-chip" onclick="filterStores('Civil Lines')">Civil Lines</button>
+                    <button class="city-chip" onclick="filterStores('Jowahar Nagar')">Jowahar Nagar</button>
+                    <button class="city-chip" onclick="filterStores('Old City')">Old City</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Store Locations Grid -->
+        <div class="stores-grid" id="stores-grid-container">
+            <!-- Dynamically populated via script.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-top">
+            <div class="footer-col brand-col">
+                <div class="logo-badge white">
+                    <span class="logo-main">Open <span class="logo-art">Challenge</span></span>
+                    <span class="logo-sub">AKOLA SUPERMARKET</span>
+                </div>
+                <p>Open Challenge Supermarket is Akola's premier retail hypermarket chain. High quality products at lowest prices guaranteed everyday.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Product Catalog</a></li>
+                    <li><a href="stores.html">Find Akola Stores</a></li>
+                    <li><a href="about.html">About Open Challenge</a></li>
+                    <li><a href="contact.html">Customer Contact & Help</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us / Feedback</a></li>
+                    <li><a href="contact.html#faq">Frequently Asked Questions</a></li>
+                    <li><a href="stores.html">Store Operating Hours</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col app-col">
+                <h4>Akola Helpline</h4>
+                <p><i class="fa-solid fa-phone"></i> <strong>0724-2430001</strong> (8 AM - 8 PM)</p>
+                <p><i class="fa-solid fa-envelope"></i> support@openchallenge.in</p>
+                <p><i class="fa-solid fa-location-dot"></i> Murtizapur Road, Akola, MH 444001</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container flex-between">
+                <p>&copy; 2026 Open Challenge Supermarket (Akola, Maharashtra). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
