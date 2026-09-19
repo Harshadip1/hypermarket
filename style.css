@@ -1827,5 +1827,462 @@ body {
     margin-right: 3px;
 }
 
+/* ==========================================================================
+   MASTER MOBILE RESPONSIVE OVERHAUL (320px to 1024px)
+   ========================================================================== */
+
+/* Prevent horizontal page scroll overflow on touch devices */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+
+/* Touch-friendly Scrollbars */
+.category-nav .nav-links,
+.digital-quick-filters {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important; /* Firefox */
+}
+
+.category-nav .nav-links::-webkit-scrollbar,
+.digital-quick-filters::-webkit-scrollbar {
+    display: none !important; /* Chrome / Safari / Edge */
+}
+
+/* Mobile Filter Drawer Base */
+.mobile-filter-trigger-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--dmart-green) 0%, var(--dmart-green-dark) 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(11, 111, 58, 0.25);
+}
+
+.close-mobile-sidebar-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+/* Tablet & Mobile Breakpoints (<= 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Mobile Filter Drawer System */
+    .mobile-filter-trigger-btn { display: flex; }
+    
+    .sidebar-filters {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        z-index: 1200;
+        background: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-radius: 20px 20px 0 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.25) !important;
+        padding: 24px 20px !important;
+        max-height: 82vh;
+        overflow-y: auto;
+        transition: bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        display: block !important;
+    }
+    
+    .sidebar-filters.mobile-active {
+        bottom: 0 !important;
+    }
+    
+    .close-mobile-sidebar-btn { display: block; }
+
+    .mobile-filter-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 1199;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-filter-backdrop.mobile-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .catalog-section {
+        grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Smartphone Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+    /* Announcement Bar */
+    .announcement-bar {
+        font-size: 0.75rem;
+        padding: 6px 0;
+    }
+
+    .announcement-bar .flex-between {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .announcement-links {
+        gap: 8px;
+        font-size: 0.725rem;
+    }
+
+    /* Main Header Layout */
+    .main-header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .logo-main {
+        font-size: 1.25rem !important;
+    }
+
+    .logo-sub {
+        font-size: 0.625rem !important;
+    }
+
+    .header-actions {
+        order: 2;
+        gap: 8px;
+    }
+
+    .action-btn {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    .action-btn i {
+        font-size: 1.05rem;
+    }
+
+    .search-container {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 4px;
+    }
+
+    .search-wrapper {
+        height: 42px;
+    }
+
+    .search-cat-dropdown {
+        max-width: 105px;
+        font-size: 0.775rem;
+        padding: 0 8px;
+    }
+
+    .search-wrapper input {
+        font-size: 0.825rem;
+        padding: 8px 10px;
+    }
+
+    .search-btn {
+        padding: 0 16px;
+    }
+
+    /* Category Navigation Horizontal Touch Scroll */
+    .category-nav {
+        padding: 2px 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 4px;
+        padding: 4px 8px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+
+    /* Page Hero Banners */
+    .page-hero-section {
+        padding: 28px 0;
+    }
+
+    .page-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-hero-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Carousel Slider */
+    .carousel-container {
+        height: 260px;
+    }
+
+    .slide {
+        padding: 0 20px;
+    }
+
+    .slide-content {
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .slide-content h2 {
+        font-size: 1.3rem;
+        line-height: 1.25;
+        margin-bottom: 6px;
+    }
+
+    .slide-content p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .slide-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .slide-badge-circle {
+        display: none !important;
+    }
+
+    .digital-timer-widget {
+        padding: 8px 12px;
+        margin-top: 8px;
+    }
+
+    .timer-label {
+        font-size: 0.65rem;
+    }
+
+    .t-unit {
+        padding: 2px 6px;
+        min-width: 36px;
+    }
+
+    .t-unit strong {
+        font-size: 1rem;
+    }
+
+    .t-unit small {
+        font-size: 0.55rem;
+    }
+
+    /* Promises Ribbon */
+    .promises-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .promise-item {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .promise-item i {
+        font-size: 1.5rem;
+    }
+
+    .promise-item h4 {
+        font-size: 0.85rem;
+    }
+
+    .promise-item p {
+        font-size: 0.725rem;
+    }
+
+    /* Catalog Toolbar */
+    .catalog-toolbar {
+        padding: 12px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .toolbar-left h2 {
+        font-size: 1.15rem;
+    }
+
+    .toolbar-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .sort-box {
+        font-size: 0.775rem;
+    }
+
+    .sort-dropdown {
+        padding: 4px 8px;
+        font-size: 0.775rem;
+    }
+
+    /* Reviews & Grid Layouts */
+    .reviews-grid, .stores-grid, .values-grid, .contact-cards-grid, .about-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .detail-img-box {
+        height: 220px;
+    }
+}
+
+/* Small Smartphone Breakpoint (<= 600px) */
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-img-wrapper {
+        height: 130px;
+    }
+
+    .product-title {
+        font-size: 0.825rem;
+        height: 2.5em;
+        margin-bottom: 6px;
+    }
+
+    .product-variant-select {
+        padding: 3px 6px;
+        font-size: 0.725rem;
+        margin-bottom: 6px;
+    }
+
+    .dmart-price {
+        font-size: 1.05rem;
+    }
+
+    .mrp-price {
+        font-size: 0.75rem;
+    }
+
+    .save-badge {
+        font-size: 0.675rem;
+        padding: 2px 4px;
+    }
+
+    .btn-view-details {
+        padding: 7px 10px;
+        font-size: 0.775rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .cat-card {
+        padding: 8px 4px;
+    }
+
+    .cat-thumb-box {
+        width: 48px;
+        height: 48px;
+    }
+
+    .cat-card span {
+        font-size: 0.7rem;
+    }
+
+    .promises-ribbon {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Extra Small Phones (<= 380px) */
+@media (max-width: 380px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .product-card {
+        padding: 8px;
+    }
+
+    .product-img-wrapper {
+        height: 115px;
+    }
+
+    .action-text {
+        display: none;
+    }
+
+    .action-btn {
+        padding: 6px 8px;
+    }
+}
+
+
 
 

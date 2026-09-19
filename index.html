@@ -19,23 +19,6 @@
 </head>
 <body>
 
-    <!-- Top Announcement Bar -->
-    <div class="announcement-bar">
-        <div class="container flex-between">
-            <div class="announcement-text">
-                <span class="pulse-led"></span>
-                <span><strong>Open Challenge Supermarket Akola</strong> | Digital Catalog & Daily Lowest Prices Guaranteed! <span class="digital-badge-pill">🟢 4 STORES OPEN</span></span>
-            </div>
-            <div class="announcement-links">
-                <a href="stores.html"><i class="fa-solid fa-location-dot"></i> Akola Store Locations</a>
-                <span class="divider">|</span>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
-                <span class="divider">|</span>
-                <a href="contact.html"><i class="fa-solid fa-headset"></i> Customer Support</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Header -->
     <header class="main-header">
         <div class="container header-content">
@@ -262,13 +245,19 @@
             </div>
         </section>
 
+        <!-- Mobile Filter Overlay Backdrop -->
+        <div class="mobile-filter-backdrop" id="mobile-filter-backdrop"></div>
+
         <!-- Product Catalog Section (Sidebar + Grid) -->
         <section class="catalog-section container" id="catalog">
             
             <aside class="sidebar-filters" id="sidebar-filters">
                 <div class="sidebar-header">
                     <h3><i class="fa-solid fa-filter"></i> Filter Products</h3>
-                    <button class="reset-filter-btn" id="reset-filters-btn"><i class="fa-solid fa-rotate"></i> Clear All</button>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button class="reset-filter-btn" id="reset-filters-btn"><i class="fa-solid fa-rotate"></i> Clear All</button>
+                        <button class="close-mobile-sidebar-btn" id="close-mobile-filter-btn" aria-label="Close Filter"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
                 </div>
 
                 <div class="filter-group">
@@ -326,7 +315,10 @@
                         <span class="product-count" id="product-count-label">Showing 0 products</span>
                     </div>
 
-                    <div class="toolbar-right">
+                    <div class="toolbar-right" style="display: flex; align-items: center; gap: 10px;">
+                        <button class="mobile-filter-trigger-btn" id="open-mobile-filter-btn">
+                            <i class="fa-solid fa-sliders"></i> Filter
+                        </button>
                         <div class="sort-box">
                             <label for="sort-select">Sort By:</label>
                             <select id="sort-select" class="sort-dropdown">

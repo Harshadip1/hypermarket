@@ -1087,6 +1087,25 @@ function initHeroCarousel() {
 // EVENT LISTENERS & FILTERS
 // ==========================================================================
 function initEventListeners() {
+    // Mobile Filter Drawer Toggle
+    const openFilterBtn = document.getElementById('open-mobile-filter-btn');
+    const closeFilterBtn = document.getElementById('close-mobile-filter-btn');
+    const sidebarFilters = document.getElementById('sidebar-filters');
+    const filterBackdrop = document.getElementById('mobile-filter-backdrop');
+
+    openFilterBtn?.addEventListener('click', () => {
+        sidebarFilters?.classList.add('mobile-active');
+        filterBackdrop?.classList.add('mobile-active');
+    });
+
+    function closeMobileFilter() {
+        sidebarFilters?.classList.remove('mobile-active');
+        filterBackdrop?.classList.remove('mobile-active');
+    }
+
+    closeFilterBtn?.addEventListener('click', closeMobileFilter);
+    filterBackdrop?.addEventListener('click', closeMobileFilter);
+
     document.querySelectorAll('#main-nav-links .nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             const cat = link.getAttribute('data-cat');
